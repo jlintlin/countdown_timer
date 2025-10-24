@@ -1,0 +1,41 @@
+# Docker Compose Configuration for Countdown Timer
+# Author: Jie Lin, Ph.D.
+# Copyright © 2025 TLIN INVESTMENTS LLC
+# All Rights Reserved.
+
+services:
+  # Development service with hot reload
+  dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: countdown-timer-dev
+    ports:
+      - "${VITE_PORT:-5173}:${VITE_PORT:-5173}"  # Dynamic port mapping (host:container)
+    volumes:
+      # Mount source code for hot reload
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+      - ./config:/app/config
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_PORT=${VITE_PORT:-5173}  # Pass dynamic port to container
+    command: npm run dev -- --host 0.0.0.0 --port ${VITE_PORT:-5173}
+    stdin_open: true
+    tty: true
+
+  # Production service
+  prod:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: production
+    container_name: countdown-timer-prod
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+

@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --scale-unit: clamp(0.58rem, 0.48rem + 0.9vmin, 1.18rem);
+  --scale-unit-lg: calc(var(--scale-unit) * 1.35);
+  --scale-unit-xl: calc(var(--scale-unit) * 1.85);
+  --scale-gap: clamp(0.5rem, 0.4rem + 0.8vmin, 1.6rem);
+  --scale-radius: calc(var(--scale-unit) * 2.1);
+  --scale-icon: clamp(1rem, 0.85rem + 0.9vmin, 2.2rem);
+
+  /* Brand palette */
+  --color-slate-900: #0f172a;
+  --color-slate-700: #334155;
+  --color-slate-500: #64748b;
+  --color-frosted-surface: rgba(255, 255, 255, 0.96);
+  --color-frosted-tint: rgba(255, 255, 255, 0.12);
+
+  --color-teal-600: #0f766e;
+  --color-teal-500: #14b8a6;
+  --color-emerald-600: #047857;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-orange-500: #f97316;
+  --color-ruby-500: #dc2626;
+  --color-ruby-600: #b91c1c;
+
+  /* Timer gradient stops (updated at runtime for smooth transitions) */
+  --timer-gradient-start: var(--color-teal-600);
+  --timer-gradient-end: var(--color-teal-500);
+
+  /* Typography clamps */
+  --font-display: clamp(2.5rem, 5vw, 3.8rem);
+  --font-heading: clamp(1.05rem, 2.8vw, 1.6rem);
+  --font-body: clamp(0.95rem, 2vw, 1.1rem);
+  --font-mono: clamp(4rem, 8vw + 2rem, 8rem);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --scale-unit: clamp(0.62rem, 0.52rem + 0.75vmin, 1.4rem);
+    --scale-gap: clamp(0.6rem, 0.5rem + 0.7vmin, 1.9rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --scale-unit: clamp(0.68rem, 0.58rem + 0.6vmin, 1.6rem);
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  :root {
+    --font-mono: clamp(2.5rem, 8vmin, 4rem);
+    --scale-gap: clamp(0.3rem, 0.5vmin, 0.8rem);
+    --font-display: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: calc(var(--scale-unit) * 1.65);
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Enhanced focus indicators for accessibility */
+*:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Ensure focus is visible on buttons and interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
