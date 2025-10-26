@@ -13,7 +13,9 @@ const configDir = path.dirname(fileURLToPath(import.meta.url))
 export default {
   plugins: {
     // Resolve Tailwind config relative to this file to keep paths stable after relocation
-    tailwindcss: { config: path.resolve(configDir, 'tailwind.config.js') },
+    tailwindcss: {
+      config: path.resolve(configDir, 'tailwind.config.js')
+    },
     autoprefixer: {},
   },
 }
