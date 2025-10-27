@@ -85,18 +85,18 @@ export function TimerHistory({ onSelectTimer }: TimerHistoryProps) {
     >
       <button
         onClick={() => handleSelectTimer(item)}
-        className="flex-1 flex items-center gap-2 text-left min-w-0"
+        className="flex-1 flex items-center gap-2 text-left min-w-0 dark:text-white"
       >
         <div className="flex-shrink-0">
-          <div className="font-mono" style={{ fontSize: '1.125rem', fontWeight: 600 }}>
+          <div className="font-mono dark:text-white" style={{ fontSize: '1.125rem', fontWeight: 600 }}>
             {formatTimerDisplay(item.totalSeconds)}
           </div>
         </div>
         <div className="flex-1 min-w-0">
           {item.label && (
-            <p className="font-medium truncate text-sm">{item.label}</p>
+            <p className="font-medium truncate text-sm dark:text-white">{item.label}</p>
           )}
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground dark:text-[#a8b5cc]">
             {formatDurationNatural(item.duration)} • {item.useCount}x
           </p>
         </div>
@@ -133,11 +133,11 @@ export function TimerHistory({ onSelectTimer }: TimerHistoryProps) {
     <>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
-          <Button variant="outline" className="gap-2" size="lg">
+          <Button variant="outline" className="gap-2 dark:text-white" size="lg">
             <History className="h-4 w-4" />
             History
             {favorites.length > 0 && (
-              <Badge variant="secondary" className="ml-1 px-1.5 py-0 h-5 text-xs">
+              <Badge variant="secondary" className="ml-1 px-1.5 py-0 h-5 text-xs dark:text-white">
                 {favorites.length}
               </Badge>
             )}
@@ -153,7 +153,7 @@ export function TimerHistory({ onSelectTimer }: TimerHistoryProps) {
 
           <div className="mt-4 space-y-3 flex-1 overflow-hidden flex flex-col">
             {history.length === 0 ? (
-              <div className="text-center py-8 text-muted-foreground">
+              <div className="text-center py-8 text-muted-foreground dark:text-[#a8b5cc]">
                 <Clock className="h-10 w-10 mx-auto mb-2 opacity-50" />
                 <p>No timer history yet</p>
                 <p className="text-sm mt-1">Start a timer to see it here</p>
@@ -162,16 +162,16 @@ export function TimerHistory({ onSelectTimer }: TimerHistoryProps) {
               <>
                 <Tabs defaultValue="recent" className="w-full flex-1 flex flex-col overflow-hidden">
                   <TabsList className="grid w-full grid-cols-3 flex-shrink-0">
-                    <TabsTrigger value="recent">Recent</TabsTrigger>
-                    <TabsTrigger value="favorites">
+                    <TabsTrigger value="recent" className="dark:text-white">Recent</TabsTrigger>
+                    <TabsTrigger value="favorites" className="dark:text-white">
                       Favorites
                       {favorites.length > 0 && (
-                        <Badge variant="secondary" className="ml-1.5 px-1.5 py-0 h-4 text-xs">
+                        <Badge variant="secondary" className="ml-1.5 px-1.5 py-0 h-4 text-xs dark:text-white">
                           {favorites.length}
                         </Badge>
                       )}
                     </TabsTrigger>
-                    <TabsTrigger value="popular">Popular</TabsTrigger>
+                    <TabsTrigger value="popular" className="dark:text-white">Popular</TabsTrigger>
                   </TabsList>
 
                   <TabsContent value="recent" className="mt-3 flex-1 overflow-hidden">
@@ -185,7 +185,7 @@ export function TimerHistory({ onSelectTimer }: TimerHistoryProps) {
                   <TabsContent value="favorites" className="mt-3 flex-1 overflow-hidden">
                     <ScrollArea className="h-full pr-3">
                       {favorites.length === 0 ? (
-                        <div className="text-center py-8 text-muted-foreground">
+                        <div className="text-center py-8 text-muted-foreground dark:text-[#a8b5cc]">
                           <Star className="h-10 w-10 mx-auto mb-2 opacity-50" />
                           <p>No favorites yet</p>
                           <p className="text-sm mt-1">Star timers to save them here</p>
@@ -213,7 +213,7 @@ export function TimerHistory({ onSelectTimer }: TimerHistoryProps) {
                       variant="outline"
                       size="sm"
                       onClick={() => setShowClearDialog(true)}
-                      className="w-full gap-2"
+                      className="w-full gap-2 dark:text-white"
                     >
                       <Trash2 className="h-4 w-4" />
                       Clear History (Keep Favorites)

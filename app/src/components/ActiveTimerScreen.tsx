@@ -216,7 +216,7 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
   }, [isPaused, isComplete, timeRemaining]);
   
   const completeGradient = theme === 'dark'
-    ? 'linear-gradient(135deg, #331414 0%, #551a1a 100%)'
+    ? 'linear-gradient(135deg, #1a0a0f 0%, #2d1520 100%)'
     : 'linear-gradient(135deg, #ffe0e0 0%, #ffb3b3 100%)';
   
   return (
@@ -236,7 +236,7 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
               variant="ghost"
               size="sm"
               onClick={handleBackToSetupClick}
-              className="gap-2 rounded-xl hover:bg-white/10 transition-all duration-300"
+              className="gap-2 rounded-xl hover:bg-white/10 transition-all duration-300 dark:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
               <span className="hidden sm:inline">Back</span>
@@ -304,7 +304,7 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
                 <div className="flex gap-2 justify-center">
                   <Button
                     onClick={handlePauseResume}
-                    className="flex-1 max-w-[160px] h-12 gap-2 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                    className="flex-1 max-w-[160px] h-12 gap-2 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white"
                   >
                     {isPaused ? (
                       <>
@@ -321,7 +321,7 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
                   <Button
                     onClick={handleResetClick}
                     variant="outline"
-                    className="flex-1 max-w-[160px] h-12 gap-2 rounded-2xl glass-secondary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                    className="flex-1 max-w-[160px] h-12 gap-2 rounded-2xl glass-secondary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white"
                   >
                     <RotateCcw className="h-4 w-4" />
                     <span>Reset</span>
@@ -333,7 +333,7 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
                   <Button
                     onClick={handleSubtractMinute}
                     variant="secondary"
-                    className="flex-1 max-w-[130px] h-10 gap-2 rounded-2xl glass-tertiary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                    className="flex-1 max-w-[130px] h-10 gap-2 rounded-2xl glass-tertiary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white"
                     disabled={timeRemaining === 0}
                   >
                     <Minus className="h-4 w-4" />
@@ -342,7 +342,7 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
                   <Button
                     onClick={handleAddMinute}
                     variant="secondary"
-                    className="flex-1 max-w-[130px] h-10 gap-2 rounded-2xl glass-tertiary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                    className="flex-1 max-w-[130px] h-10 gap-2 rounded-2xl glass-tertiary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white"
                   >
                     <Plus className="h-4 w-4" />
                     <span>1 min</span>
@@ -351,43 +351,43 @@ export function ActiveTimerScreen({ initialSeconds, onReset }: ActiveTimerScreen
               </div>
               
               {/* Keyboard Shortcuts */}
-              <div className="text-center text-xs text-muted-foreground hidden sm:block glass-tertiary rounded-xl py-1.5 px-3 mx-auto max-w-fit">
-                <p><kbd className="px-1.5 py-0.5 glass-secondary rounded text-foreground mx-1">Space</kbd> Pause/Resume • <kbd className="px-1.5 py-0.5 glass-secondary rounded text-foreground mx-1">R</kbd> Reset</p>
+              <div className="text-center text-xs text-muted-foreground dark:text-[#a8b5cc] hidden sm:block glass-tertiary rounded-xl py-1.5 px-3 mx-auto max-w-fit">
+                <p><kbd className="px-1.5 py-0.5 glass-secondary rounded text-foreground dark:text-white mx-1">Space</kbd> Pause/Resume • <kbd className="px-1.5 py-0.5 glass-secondary rounded text-foreground dark:text-white mx-1">R</kbd> Reset</p>
               </div>
             </>
           ) : (
             /* Complete State */
             <div className="text-center space-y-5">
               <div className="space-y-4 glass-primary rounded-3xl p-6 sm:p-8">
-                <h1 
-                  className="text-destructive bg-gradient-to-br from-destructive to-destructive/70 bg-clip-text text-transparent dark:from-[#ff6b7a] dark:to-[#ff6b7a]/80 dark:drop-shadow-[0_0_16px_rgba(255,107,122,0.3)]"
+                <h1
+                  className="text-destructive bg-gradient-to-br from-[#FF3B30] to-[#FF3B30]/70 bg-clip-text text-transparent dark:from-[#ff8c9b] dark:to-[#ff8c9b]/85 dark:drop-shadow-[0_0_16px_rgba(255,140,155,0.4)]"
                   style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', fontWeight: 700, letterSpacing: '-0.02em' }}
                 >
                   Time's up!
                 </h1>
-                <p className="text-muted-foreground dark:text-[#a8b5cc]">
+                <p className="text-muted-foreground dark:text-[#c8d2e6]">
                   Your {formatDurationNatural(secondsToDuration(initialSeconds))} timer has completed.
                 </p>
                 {elapsedSinceComplete > 0 && (
                   <div className="glass-secondary rounded-2xl py-2 px-4 mx-auto max-w-fit">
-                    <p className="text-sm text-muted-foreground dark:text-[#a8b5cc]">
+                    <p className="text-sm text-muted-foreground dark:text-[#c8d2e6]">
                       Elapsed: {formatTimerDisplay(elapsedSinceComplete)}
                     </p>
                   </div>
                 )}
               </div>
-              
+
               <div className="flex gap-2 justify-center flex-wrap px-4">
                 <Button
                   onClick={handleRestart}
-                  className="flex-1 min-w-[140px] max-w-[180px] h-12 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  className="flex-1 min-w-[140px] max-w-[180px] h-12 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white dark:bg-[rgba(99,179,237,0.25)] dark:border-[rgba(99,179,237,0.4)]"
                 >
                   Restart Timer
                 </Button>
                 <Button
                   onClick={handleBackToSetupClick}
                   variant="outline"
-                  className="flex-1 min-w-[140px] max-w-[180px] h-12 rounded-2xl glass-secondary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  className="flex-1 min-w-[140px] max-w-[180px] h-12 rounded-2xl glass-secondary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-[#e8f0f8] dark:bg-[rgba(76,92,122,0.3)] dark:border-[rgba(139,160,197,0.3)]"
                 >
                   Back to Setup
                 </Button>

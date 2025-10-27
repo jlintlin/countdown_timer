@@ -66,7 +66,7 @@ export function NaturalLanguageDurationInput({
   
   return (
     <div className="space-y-3 w-full">
-      <Label htmlFor="natural-duration" className="sr-only">Duration</Label>
+      <Label htmlFor="natural-duration" className="sr-only dark:text-[#e8f0f8]">Duration</Label>
       <Input
         ref={inputRef}
         id="natural-duration"
@@ -74,17 +74,17 @@ export function NaturalLanguageDurationInput({
         placeholder="e.g., 5m, 1h 30m, 90m, 120s, 01:30:20"
         value={inputValue}
         onChange={handleChange}
-        className={`h-14 text-center text-lg ${error ? 'border-destructive' : ''}`}
+        className={`h-14 text-center text-lg dark:text-white ${error ? 'border-destructive' : ''}`}
         aria-invalid={!!error}
         aria-describedby={error ? 'duration-error' : 'duration-helper'}
       />
       {error ? (
-        <div id="duration-error" className="flex items-center justify-center gap-2 text-destructive" role="alert">
+        <div id="duration-error" className="flex items-center justify-center gap-2 text-destructive dark:text-[#ff8c9b]" role="alert">
           <AlertCircle className="h-4 w-4 shrink-0" />
           <p className="text-sm">{error}</p>
         </div>
       ) : (
-        <p id="duration-helper" className="text-xs text-center text-muted-foreground">
+        <p id="duration-helper" className="text-xs text-center text-muted-foreground dark:text-[#a8b5cc]">
           Examples: 5m · 1h 30m · 90m · 120s · 01:30:20
         </p>
       )}

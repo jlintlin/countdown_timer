@@ -85,7 +85,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
           <div className="flex justify-center gap-2">
             <Popover open={showPresets} onOpenChange={setShowPresets}>
               <PopoverTrigger asChild>
-                <Button variant="outline" className="gap-2">
+                <Button variant="outline" className="gap-2 dark:text-white">
                   <Zap className="h-4 w-4" />
                   Quick Start
                 </Button>
@@ -93,8 +93,8 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
               <PopoverContent className="w-80" align="center">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span className="font-medium">Preset Durations</span>
+                    <Clock className="h-4 w-4 text-muted-foreground dark:text-[#a8b5cc]" />
+                    <span className="font-medium dark:text-white">Preset Durations</span>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
                     {PRESET_DURATIONS.map((preset) => (
@@ -103,7 +103,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
                         variant="outline"
                         size="sm"
                         onClick={() => handlePresetSelect(preset.duration)}
-                        className="h-10"
+                        className="h-10 dark:text-white"
                       >
                         {preset.label}
                       </Button>
@@ -124,7 +124,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
                 pressed={inputMethod === 'type'}
                 onPressedChange={(pressed) => pressed && setInputMethod('type')}
                 aria-label="Type duration"
-                className="gap-2 rounded-2xl px-5 h-10 transition-all duration-300"
+                className="gap-2 rounded-2xl px-5 h-10 transition-all duration-300 dark:text-white"
               >
                 <Type className="h-4 w-4" />
                 Type
@@ -133,7 +133,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
                 pressed={inputMethod === 'pick'}
                 onPressedChange={(pressed) => pressed && setInputMethod('pick')}
                 aria-label="Pick duration"
-                className="gap-2 rounded-2xl px-5 h-10 transition-all duration-300"
+                className="gap-2 rounded-2xl px-5 h-10 transition-all duration-300 dark:text-white"
               >
                 <ListOrdered className="h-4 w-4" />
                 Pick
@@ -162,13 +162,13 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
             {totalSeconds > 0 && (
               <div className="text-center space-y-2 pt-4 border-t border-white/10 dark:border-[#8ba0c5]/20">
                 <p className="text-sm text-muted-foreground dark:text-[#a8b5cc]">Timer will be set to:</p>
-                <div 
-                  className="font-mono tracking-tight bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent dark:from-[#e8f0f8] dark:to-[#d1dce8] dark:drop-shadow-[0_0_8px_rgba(99,179,237,0.2)]" 
+                <div
+                  className="font-mono tracking-tight bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent dark:from-[#e8f0f8] dark:to-[#d1dce8] dark:drop-shadow-[0_0_8px_rgba(99,179,237,0.2)]"
                   style={{ fontSize: '2.5rem', fontWeight: 700, lineHeight: 1.1 }}
                 >
                   {formatTimerDisplay(totalSeconds)}
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground dark:text-[#a8b5cc]">
                   ({formatDurationNatural(duration)})
                 </p>
               </div>
@@ -179,7 +179,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
               <Button
                 onClick={handleStart}
                 disabled={!canStart}
-                className="flex-1 h-12 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                className="flex-1 h-12 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white"
               >
                 Start Timer
               </Button>
@@ -187,7 +187,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
                 <Button
                   onClick={handleClear}
                   variant="outline"
-                  className="h-12 px-5 rounded-2xl glass-secondary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  className="h-12 px-5 rounded-2xl glass-secondary transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] dark:text-white"
                 >
                   Clear
                 </Button>
@@ -196,7 +196,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
           </div>
           
           {/* Helper Text */}
-          <div className="text-center text-xs text-muted-foreground">
+          <div className="text-center text-xs text-muted-foreground dark:text-[#a8b5cc]">
             <p>Duration: 1 second to 99 hours</p>
           </div>
         </div>

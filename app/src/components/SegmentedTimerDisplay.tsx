@@ -83,8 +83,8 @@ function TimeSegment({
         
         {/* Number */}
         <div
-          className="relative bg-gradient-to-br from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent dark:from-[#e8f0f8] dark:via-[#d1dce8] dark:to-[#e8f0f8]/90 dark:drop-shadow-[0_0_8px_rgba(99,179,237,0.3)]"
-          style={{ 
+          className="relative bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a]/80 bg-clip-text text-transparent dark:from-[#e8f0f8] dark:via-[#d1dce8] dark:to-[#e8f0f8]/90 dark:drop-shadow-[0_0_8px_rgba(99,179,237,0.3)]"
+          style={{
             fontSize: 'clamp(2rem, 6vw, 3.5rem)',
             fontWeight: 700,
             lineHeight: 1,

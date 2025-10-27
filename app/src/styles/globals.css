@@ -1,33 +1,34 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
+
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
-  
+
   /* Liquid Glass - Light Mode */
   --background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
   --foreground: oklch(0.145 0 0);
-  
+
   /* Glass Material System */
   --glass-primary: rgba(255, 255, 255, 0.7);
   --glass-secondary: rgba(255, 255, 255, 0.5);
   --glass-tertiary: rgba(255, 255, 255, 0.3);
   --glass-border: rgba(255, 255, 255, 0.8);
   --glass-shadow: rgba(0, 0, 0, 0.1);
-  
+
   /* Backdrop Blur Levels */
   --blur-sm: 8px;
   --blur-md: 16px;
   --blur-lg: 24px;
   --blur-xl: 40px;
-  
+
   /* Refraction & Depth */
   --glass-highlight: rgba(255, 255, 255, 0.9);
   --glass-shine: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 50%);
-  
+
   /* Content Colors with Glass Support */
   --card: rgba(255, 255, 255, 0.75);
   --card-foreground: oklch(0.145 0 0);
@@ -43,41 +44,41 @@
   --accent-foreground: #007AFF;
   --destructive: #FF3B30;
   --destructive-foreground: #ffffff;
-  
+
   /* Borders & Inputs */
   --border: rgba(0, 0, 0, 0.08);
   --input: rgba(0, 0, 0, 0.05);
   --input-background: rgba(255, 255, 255, 0.5);
   --switch-background: rgba(120, 120, 128, 0.16);
-  
+
   /* Shadows for Depth */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.1);
-  
+
   /* Typography */
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: oklch(0.708 0 0);
-  
+
   /* Charts */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  
+
   /* Border Radius - More rounded for iOS feel */
   --radius: 1rem;
-  
+
   /* Animation Timing - iOS-style smooth curves */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-slow: 350ms;
-  
+
   /* Sidebar (legacy support) */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
@@ -92,65 +93,65 @@
 .dark {
   /* Liquid Glass - Dark Mode with Rich Deep Blue Gradient */
   --background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
-  --foreground: #f0f4f8;
-  
+  --foreground: #ffffff;
+
   /* Glass Material System - Dark with Enhanced Contrast */
-  --glass-primary: rgba(42, 52, 74, 0.75);
-  --glass-secondary: rgba(42, 52, 74, 0.55);
-  --glass-tertiary: rgba(42, 52, 74, 0.35);
-  --glass-border: rgba(139, 160, 197, 0.2);
+  --glass-primary: rgba(42, 52, 74, 0.85);
+  --glass-secondary: rgba(42, 52, 74, 0.65);
+  --glass-tertiary: rgba(42, 52, 74, 0.45);
+  --glass-border: rgba(139, 160, 197, 0.35);
   --glass-shadow: rgba(0, 0, 0, 0.5);
-  
+
   /* Refraction & Depth - Dark with Blue Tint */
-  --glass-highlight: rgba(139, 160, 197, 0.15);
-  --glass-shine: linear-gradient(135deg, rgba(139, 160, 197, 0.2) 0%, rgba(139, 160, 197, 0) 50%);
-  
+  --glass-highlight: rgba(139, 160, 197, 0.25);
+  --glass-shine: linear-gradient(135deg, rgba(139, 160, 197, 0.3) 0%, rgba(139, 160, 197, 0) 50%);
+
   /* Content Colors with Glass Support */
-  --card: rgba(42, 52, 74, 0.8);
-  --card-foreground: #f0f4f8;
+  --card: rgba(42, 52, 74, 0.85);
+  --card-foreground: #ffffff;
   --popover: rgba(42, 52, 74, 0.9);
-  --popover-foreground: #f0f4f8;
-  --primary: #f0f4f8;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
   --primary-foreground: #0a0e1a;
   --secondary: rgba(76, 92, 122, 0.8);
-  --secondary-foreground: #f0f4f8;
+  --secondary-foreground: #ffffff;
   --muted: rgba(76, 92, 122, 0.6);
-  --muted-foreground: #a8b5cc;
+  --muted-foreground: #c8d2e6;
   --accent: rgba(99, 179, 237, 0.25);
   --accent-foreground: #63b3ed;
   --destructive: #ff6b7a;
   --destructive-foreground: #ffffff;
-  
+
   /* Borders & Inputs */
   --border: rgba(139, 160, 197, 0.15);
   --input: rgba(139, 160, 197, 0.08);
   --input-background: rgba(42, 52, 74, 0.6);
   --switch-background: rgba(139, 160, 197, 0.25);
-  
+
   /* Shadows for Depth - Dark with Blue Glow */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(10, 14, 26, 0.4);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(10, 14, 26, 0.5);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(10, 14, 26, 0.6);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(10, 14, 26, 0.7);
-  
+
   /* Timer-Specific Dark Mode Colors */
   --timer-glow-primary: rgba(99, 179, 237, 0.4);
   --timer-glow-secondary: rgba(139, 160, 197, 0.3);
   --timer-text-primary: #e8f0f8;
   --timer-text-secondary: #d1dce8;
-  
+
   /* Typography */
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: oklch(0.6 0.05 240);
-  
+
   /* Charts */
   --chart-1: oklch(0.65 0.2 240);
   --chart-2: oklch(0.7 0.15 180);
   --chart-3: oklch(0.75 0.18 80);
   --chart-4: oklch(0.65 0.22 290);
   --chart-5: oklch(0.68 0.2 30);
-  
+
   /* Sidebar (legacy support) */
   --sidebar: #1a1f2e;
   --sidebar-foreground: #f0f4f8;
@@ -213,7 +214,7 @@
     background: var(--background);
     transition: background var(--duration-slow) var(--ease-smooth);
   }
-  
+
   /* Liquid Glass Utility Classes */
   .glass-primary {
     background: var(--glass-primary);
@@ -223,7 +224,7 @@
     box-shadow: var(--shadow-md);
     position: relative;
   }
-  
+
   .glass-primary::before {
     content: '';
     position: absolute;
@@ -235,14 +236,14 @@
     border-radius: inherit;
     pointer-events: none;
   }
-  
+
   .dark .glass-primary {
-    box-shadow: 
+    box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.5),
-      0 4px 16px rgba(99, 179, 237, 0.1),
-      inset 0 1px 0 rgba(139, 160, 197, 0.2);
+      0 4px 16px rgba(99, 179, 237, 0.25),
+      inset 0 1px 0 rgba(139, 160, 197, 0.35);
   }
-  
+
   .glass-secondary {
     background: var(--glass-secondary);
     backdrop-filter: blur(var(--blur-md));
@@ -250,85 +251,85 @@
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-sm);
   }
-  
+
   .dark .glass-secondary {
-    box-shadow: 
+    box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.4),
-      0 2px 8px rgba(99, 179, 237, 0.08),
-      inset 0 1px 0 rgba(139, 160, 197, 0.15);
+      0 2px 8px rgba(99, 179, 237, 0.15),
+      inset 0 1px 0 rgba(139, 160, 197, 0.25);
   }
-  
+
   .glass-tertiary {
     background: var(--glass-tertiary);
     backdrop-filter: blur(var(--blur-sm));
     -webkit-backdrop-filter: blur(var(--blur-sm));
     border: 1px solid var(--glass-border);
   }
-  
+
   /* Timer Segment Glass Effect */
   .timer-segment-glass {
     backdrop-filter: blur(var(--blur-md));
     -webkit-backdrop-filter: blur(var(--blur-md));
   }
-  
+
   .timer-segment-glass-primary {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 
-      0 8px 24px rgba(0, 0, 0, 0.12), 
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.12),
       0 2px 8px rgba(0, 0, 0, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.3),
       inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   }
-  
+
   .timer-segment-glass-secondary {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
-      0 4px 16px rgba(0, 0, 0, 0.1), 
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.1),
       0 1px 4px rgba(0, 0, 0, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
       inset 0 -1px 0 rgba(0, 0, 0, 0.03);
   }
-  
+
   .dark .timer-segment-glass-primary {
     background: linear-gradient(145deg, rgba(99, 179, 237, 0.18) 0%, rgba(76, 92, 122, 0.25) 100%);
     border: 1px solid rgba(139, 160, 197, 0.35);
-    box-shadow: 
+    box-shadow:
       0 8px 32px rgba(99, 179, 237, 0.15),
-      0 4px 16px rgba(0, 0, 0, 0.5), 
+      0 4px 16px rgba(0, 0, 0, 0.5),
       0 2px 8px rgba(0, 0, 0, 0.4),
       inset 0 1px 0 rgba(139, 160, 197, 0.3),
       inset 0 -1px 0 rgba(10, 14, 26, 0.5);
   }
-  
+
   .dark .timer-segment-glass-secondary {
     background: linear-gradient(145deg, rgba(76, 92, 122, 0.2) 0%, rgba(42, 52, 74, 0.3) 100%);
     border: 1px solid rgba(139, 160, 197, 0.25);
-    box-shadow: 
+    box-shadow:
       0 4px 20px rgba(99, 179, 237, 0.08),
-      0 2px 12px rgba(0, 0, 0, 0.4), 
+      0 2px 12px rgba(0, 0, 0, 0.4),
       0 1px 4px rgba(0, 0, 0, 0.3),
       inset 0 1px 0 rgba(139, 160, 197, 0.2),
       inset 0 -1px 0 rgba(10, 14, 26, 0.4);
   }
-  
+
   /* Smooth transitions for all interactive elements */
   button, input, select, textarea {
     transition: all var(--duration-normal) var(--ease-smooth);
   }
-  
+
   /* iOS-style focus states */
   button:active {
     transform: scale(0.96);
   }
-  
+
   /* Viewport optimization */
   .h-screen {
     height: 100vh;
     height: 100dvh; /* Use dynamic viewport height when available */
   }
-  
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
@@ -336,7 +337,7 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-    
+
     button:active {
       transform: none;
     }

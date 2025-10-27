@@ -46,9 +46,9 @@ export function SegmentedDurationInput({
     <div className="space-y-4 w-full">
       <div className="grid grid-cols-3 gap-3 sm:gap-4">
         <div className="space-y-2">
-          <Label htmlFor="hours" className="text-center block text-sm">Hours</Label>
-          <Select 
-            value={value.hours.toString()} 
+          <Label htmlFor="hours" className="text-center block text-sm dark:text-[#e8f0f8]">Hours</Label>
+          <Select
+            value={value.hours.toString()}
             onValueChange={handleHoursChange}
           >
             <SelectTrigger id="hours" className="w-full h-14 text-lg">
@@ -63,11 +63,11 @@ export function SegmentedDurationInput({
             </SelectContent>
           </Select>
         </div>
-        
+
         <div className="space-y-2">
-          <Label htmlFor="minutes" className="text-center block text-sm">Minutes</Label>
-          <Select 
-            value={value.minutes.toString()} 
+          <Label htmlFor="minutes" className="text-center block text-sm dark:text-[#e8f0f8]">Minutes</Label>
+          <Select
+            value={value.minutes.toString()}
             onValueChange={handleMinutesChange}
           >
             <SelectTrigger id="minutes" className="w-full h-14 text-lg">
@@ -82,11 +82,11 @@ export function SegmentedDurationInput({
             </SelectContent>
           </Select>
         </div>
-        
+
         <div className="space-y-2">
-          <Label htmlFor="seconds" className="text-center block text-sm">Seconds</Label>
-          <Select 
-            value={value.seconds.toString()} 
+          <Label htmlFor="seconds" className="text-center block text-sm dark:text-[#e8f0f8]">Seconds</Label>
+          <Select
+            value={value.seconds.toString()}
             onValueChange={handleSecondsChange}
           >
             <SelectTrigger id="seconds" className="w-full h-14 text-lg">
@@ -102,8 +102,8 @@ export function SegmentedDurationInput({
           </Select>
         </div>
       </div>
-      
-      <p className="text-xs text-center text-muted-foreground">
+
+      <p className="text-xs text-center text-muted-foreground dark:text-[#a8b5cc]">
         Range: 0–99 hours · 0–59 minutes/seconds
       </p>
     </div>
